@@ -25,6 +25,14 @@ public class UniversityManager {
         Student s = students.get(studentID);
         Course c = courses.get(courseCode);
 
+        if (s == null) {
+            throw new IllegalArgumentException("Student does not exist!");
+        }
+
+        if (c == null) {
+            throw new IllegalArgumentException("Course does not exist!");
+        }
+
         if (c.getRoster().contains(s)) {
             throw new StudentAlreadyEnrolledException("Student already enrolled!");
         }
@@ -34,5 +42,10 @@ public class UniversityManager {
         }
 
         c.enroll(s);
+    }
+
+    // ⭐ NEW METHOD (fixes error in Main)
+    public List<Student> getAllStudents() {
+        return new ArrayList<>(students.values());
     }
 }
