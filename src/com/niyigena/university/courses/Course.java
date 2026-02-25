@@ -5,28 +5,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-
-    private String courseName;
+    private String courseCode;
+    private String title;
     private int credits;
     private int capacity;
 
     private List<Student> roster = new ArrayList<>();
 
-    public Course(String name, int credits, int capacity) {
-        this.courseName = name;
+    public Course(String code, String title, int credits, int capacity) {
+        this.courseCode = code;
+        this.title = title;
         this.credits = credits;
         this.capacity = capacity;
     }
 
-    public String getCourseName() { return courseName; }
-    public int getCredits() { return credits; }
     public List<Student> getRoster() { return roster; }
+    public int getCapacity() { return capacity; }
+    public String getCourseCode() { return courseCode; }
 
-    public boolean isFull() {
-        return roster.size() >= capacity;
-    }
-
-    public void addStudent(Student s) {
+    public void enroll(Student s) {
         roster.add(s);
     }
 }

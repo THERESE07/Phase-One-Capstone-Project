@@ -4,12 +4,9 @@ import com.niyigena.university.courses.Course;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Student extends Person {
-
+public class Student extends Person {
     private String studentID;
-    private double gpa;
-
-    // course → grade
+    private double GPA;
     private Map<Course, Double> courseGrades = new HashMap<>();
 
     public Student(String name, int age, String studentID) {
@@ -18,11 +15,23 @@ public abstract class Student extends Person {
     }
 
     public String getStudentID() { return studentID; }
-    public double getGPA() { return gpa; }
+    public double getGPA() { return GPA; }
 
-    public void setGPA(double gpa) { this.gpa = gpa; }
+    public void addCourseGrade(Course course, double grade) {
+        courseGrades.put(course, grade);
+        updateGPA();
+    }
 
-    public Map<Course, Double> getCourseGrades() {
-        return courseGrades;
+    private void updateGPA() {
+        if (courseGrades.isEmpty()) {
+            GPA = 0;
+            return;
+        }
+        GPA = courseGrades.values().stream().mapToDouble(g -> g).average().orElse(0);
+    }
+
+    @Override
+    public double calculateTuition() {
+        return 0; // Overridden in subclasses
     }
 }
