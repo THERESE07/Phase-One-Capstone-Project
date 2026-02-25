@@ -30,15 +30,7 @@ public class Student extends Person {
         GPA = courseGrades.values().stream().mapToDouble(g -> g).average().orElse(0);
     }
 
-    @Override
-    public String toString() {
-        return "Student{name='" + getName() +
-                "', age=" + getAge() +
-                ", studentID='" + studentID +
-                "', GPA=" + GPA +
-                ", courses=" + courseGrades.keySet() +
-                "}";
-    }
+
 
     @Override
     public double calculateTuition() {

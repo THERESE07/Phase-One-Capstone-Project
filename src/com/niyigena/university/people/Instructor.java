@@ -8,14 +8,7 @@ public class Instructor extends Person {
         this.department = department;
     }
 
-    @Override
-    public String toString() {
-        return "Instructor{" +
-                "name='" + getName() + '\'' +
-                ", age=" + getAge() +
-                ", department='" + department + '\'' +
-                '}';
-    }
+
 
     @Override
     public double calculateTuition() {

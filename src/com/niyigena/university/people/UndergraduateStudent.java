@@ -5,15 +5,6 @@ public class UndergraduateStudent extends Student {
         super(name, age, id);
     }
 
-    @Override
-    public String toString() {
-        return "UndergraduateStudent{" +
-                "name='" + getName() + '\'' +
-                ", age=" + getAge() +
-                ", studentID='" + getStudentID() + '\'' +
-                ", GPA=" + getGPA() +
-                '}';
-    }
 
     @Override
     public double calculateTuition() {

@@ -8,16 +8,7 @@ public class GraduateStudent extends Student {
         this.credits = credits;
     }
 
-    @Override
-    public String toString() {
-        return "GraduateStudent{" +
-                "name='" + getName() + '\'' +
-                ", age=" + getAge() +
-                ", studentID='" + getStudentID() + '\'' +
-                ", GPA=" + getGPA() +
-                ", researchCredits=" + credits +
-                '}';
-    }
+
 
     @Override
     public double calculateTuition() {
