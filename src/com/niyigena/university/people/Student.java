@@ -31,6 +31,16 @@ public class Student extends Person {
     }
 
     @Override
+    public String toString() {
+        return "Student{name='" + getName() +
+                "', age=" + getAge() +
+                ", studentID='" + studentID +
+                "', GPA=" + GPA +
+                ", courses=" + courseGrades.keySet() +
+                "}";
+    }
+
+    @Override
     public double calculateTuition() {
         return 0; // Overridden in subclasses
     }

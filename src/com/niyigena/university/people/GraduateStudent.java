@@ -9,6 +9,17 @@ public class GraduateStudent extends Student {
     }
 
     @Override
+    public String toString() {
+        return "GraduateStudent{" +
+                "name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", studentID='" + getStudentID() + '\'' +
+                ", GPA=" + getGPA() +
+                ", researchCredits=" + credits +
+                '}';
+    }
+
+    @Override
     public double calculateTuition() {
         return (credits * 200) + 500; // per-credit + research fee
     }

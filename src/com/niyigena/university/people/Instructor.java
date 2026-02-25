@@ -9,6 +9,15 @@ public class Instructor extends Person {
     }
 
     @Override
+    public String toString() {
+        return "Instructor{" +
+                "name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
+    @Override
     public double calculateTuition() {
         return 0; // instructors do not pay tuition
     }

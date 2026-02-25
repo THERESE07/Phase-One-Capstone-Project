@@ -12,5 +12,10 @@ public abstract class Person {
     public String getName() { return name; }
     public int getAge() { return age; }
 
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Age: " + age;
+    }
+
     public abstract double calculateTuition();
 }

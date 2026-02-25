@@ -6,6 +6,16 @@ public class UndergraduateStudent extends Student {
     }
 
     @Override
+    public String toString() {
+        return "UndergraduateStudent{" +
+                "name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", studentID='" + getStudentID() + '\'' +
+                ", GPA=" + getGPA() +
+                '}';
+    }
+
+    @Override
     public double calculateTuition() {
         return 1500; // flat rate
     }

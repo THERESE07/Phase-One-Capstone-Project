@@ -19,9 +19,22 @@ public class Course {
         this.capacity = capacity;
     }
 
+
+
     public List<Student> getRoster() { return roster; }
     public int getCapacity() { return capacity; }
     public String getCourseCode() { return courseCode; }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "code='" + courseCode + '\'' +
+                ", name='" + title + '\'' +
+                ", credits=" + credits +
+                ", capacity=" + capacity +
+                ", enrolledStudents=" + roster.size() +
+                '}';
+    }
 
     public void enroll(Student s) {
         roster.add(s);
