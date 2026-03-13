@@ -14,8 +14,17 @@ public class Student extends Person {
         this.studentID = studentID;
     }
 
-    public String getStudentID() { return studentID; }
-    public double getGPA() { return GPA; }
+    public String getStudentID() {
+        return studentID;
+    }
+    public double getGPA() {
+        return GPA;
+    }
+
+
+    public Map<Course, Double> getCourseGrades() {
+        return courseGrades;
+    }
 
     public void addCourseGrade(Course course, double grade) {
         courseGrades.put(course, grade);
@@ -29,6 +38,9 @@ public class Student extends Person {
         }
         GPA = courseGrades.values().stream().mapToDouble(g -> g).average().orElse(0);
     }
+
+
+
 
     @Override
     public String toString() {

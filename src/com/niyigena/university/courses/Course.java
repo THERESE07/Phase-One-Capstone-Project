@@ -10,19 +10,31 @@ public class Course {
     private int credits;
     private int capacity;
 
+
     private List<Student> roster = new ArrayList<>();
 
-    public Course(String code, String title, int credits, int capacity) {
+    public Course(String code, String title, int credits, int capacity ) {
         this.courseCode = code;
         this.title = title;
         this.credits = credits;
         this.capacity = capacity;
+
     }
 
 
 
     public List<Student> getRoster() { return roster; }
+    public String getTitle() {
+        return title;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+
     public int getCapacity() { return capacity; }
+
     public String getCourseCode() { return courseCode; }
 
     @Override

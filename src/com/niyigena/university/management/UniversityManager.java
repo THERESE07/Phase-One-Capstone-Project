@@ -44,7 +44,41 @@ public class UniversityManager {
         c.enroll(s);
     }
 
-    // ⭐ NEW METHOD (fixes error in Main)
+    public Student getStudent(String id) {
+        return students.get(id);
+    }
+
+    // ⭐ ADD THIS MISSING METHOD
+    public Course getCourse(String code) {
+        return courses.get(code);
+    }
+
+    public List<Student> getDeansList() {
+        return students.values().stream()
+                .filter(s -> s.getGPA() > 3.5)
+                .toList();
+    }
+
+    public Student getTopStudent() {
+        return students.values().stream()
+                .max(Comparator.comparingDouble(Student::getGPA))
+                .orElse(null);
+    }
+
+    public void assignGrade(String studentID, String courseCode, double grade) throws Exception {
+
+        Student s = getStudent(studentID);
+        if (s == null) throw new Exception("Student not found.");
+
+        Course c = getCourse(courseCode);
+        if (c == null) throw new Exception("Course not found.");
+
+        if (!c.getRoster().contains(s))
+            throw new Exception("Student is not enrolled in this course.");
+
+        s.addCourseGrade(c, grade); // <-- THIS UPDATES GPA
+    }
+
     public List<Student> getAllStudents() {
         return new ArrayList<>(students.values());
     }
